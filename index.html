@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>P2</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="blocker"></div>
+    <!--Hides the page-->
+
+    <form id="passwordform" onsubmit="Passwordcheck()">
+      <input
+        type="text"
+        id="password"
+        name="password"
+        placeholder="Type in the password"
+      />
+      <button type="button" onclick="Passwordcheck()">Button</button>
+    </form>
+  </body>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam fugit
+    mollitia voluptate vitae deserunt libero inventore culpa quas nisi, voluptas
+    deleniti vel, sunt adipisci nemo dolores nulla harum impedit quo. lol test
+  </p>
+
+  <script>
+    const toggleButtons = document.querySelectorAll(".hide");
+
+    function show() {
+      toggleButtons.forEach((button) => {
+        button.classList.toggle("hidden");
+      });
+    }
+
+    function hide() {
+      /*Hides the blocker*/
+      const box = document.getElementById("blocker");
+      if (box) {
+        box.style.display = box.style.display === "none" ? "block" : "none";
+      }
+    }
+
+    function Passwordcheck() {
+      event.preventDefault();
+      const box = document.getElementById("blocker");
+      const form = document.getElementById("passwordform");
+      const input = document.getElementById("password");
+      const value = input.value;
+
+      if (value === "2030") {
+        box.style.display = box.style.display === "none" ? "block" : "none";
+        form.style.display = form.style.display === "none" ? "block" : "none";
+      } else {
+        alert("wrong!");
+      }
+    }
+  </script>
+</html>
